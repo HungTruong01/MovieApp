@@ -35,7 +35,7 @@ const App = () => {
   }, []);
 
   return (
-    <main className="pb-14 lg:pb-0">
+    <main className="flex flex-col min-h-screen">
       <Header />
       <div className="min-h-[90vh]">
         <Outlet />

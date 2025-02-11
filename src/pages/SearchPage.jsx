@@ -7,13 +7,13 @@ const SearchPage = () => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
-  const query = location?.search?.slice(3);
+  const query = location?.search?.slice(7);
 
   const fetchData = async () => {
     try {
       const response = await axios.get(`/search/multi`, {
         params: {
-          query: location?.search?.slice(3),
+          query: location?.search?.slice(7),
           page: page,
         },
       });
@@ -53,7 +53,7 @@ const SearchPage = () => {
         <input
           type="text"
           placeholder="Search here..."
-          onChange={(e) => navigate(`/search?q=${e.target.value}`)}
+          onChange={(e) => navigate(`/search?query=${e.target.value}`)}
           value={query?.split("%20")?.join(" ")}
           className="px-4 py-1 text-lg w-full bg-white rounded-full text-neutral-900 "
         />
